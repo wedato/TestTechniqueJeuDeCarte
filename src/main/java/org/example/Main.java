@@ -1,5 +1,20 @@
-package org.example;public class Main {
+package org.example;
+
+import java.util.ArrayList;
+
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        Jeu jeu = new Jeu();
+        jeu.distribuerCartes();
+        jeu.afficherCartesEnMainDesJoueurs();
+
+        try {
+            jeu.gererUnPli();
+        }catch (PasDeCartesEnMainException e ){
+            System.out.println("Exception : " + e.getMessage());
+        }
+        jeu.afficherCartesEnMainDesJoueurs();
+
     }
 }
